@@ -1,0 +1,51 @@
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& arr) {
+        
+        vector<int>ans;
+        int m=arr.size();
+        int n=arr[0].size();
+          int col_start=0;
+        int col_end=n-1;
+        int row_start=0;
+        int row_end=m-1;
+    
+        
+        while(m*n>ans.size())
+        {
+            
+            for(int col=col_start;col<=col_end;col++)
+            {
+                ans.push_back(arr[row_start][col]); 
+            }
+          
+            for(int row=row_start+1;row<=row_end;row++)
+            {
+                ans.push_back(arr[row][col_end]); 
+            }
+            
+             if(row_start<row_end)
+             {
+                 for(int col=col_end-1;col>=col_start;col--)
+                {
+                      ans.push_back(arr[row_end][col]);
+                }
+           
+             }
+         
+            if(col_start<col_end )
+            {
+               for(int row=row_end-1;row>row_start;row--)
+                {
+                    ans.push_back(arr[row][col_start]) ;
+                }
+            
+            }
+              row_start++;
+              row_end--;
+              col_start++;
+              col_end--;
+        }
+        return ans;
+    }
+};
