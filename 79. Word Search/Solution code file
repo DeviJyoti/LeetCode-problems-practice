@@ -1,0 +1,80 @@
+class Solution {
+public:
+    bool func(int i,int j,vector<vector<char>>& board,int index,string word)
+    {
+        
+        int col=board[0].size();
+        //i=row  j=column  index=character position in word 
+        char temp=board[i][j];
+        board[i][j]='#';
+      if(index+1>=word.length()) return true; //base condition
+        //for upward
+        if(i>0)
+        {
+            if(board[i-1][j]==word[index+1])
+            {
+                if(func(i-1,j,board,index+1,word))
+                {
+                    board[i][j]=temp;
+                    return true;
+                }
+            }
+        }
+        //for downward
+        if(i<board.size()-1)
+        {
+            if(board[i+1][j]==word[index+1])
+            {
+                if(func(i+1,j,board,index+1,word))
+                {
+                    board[i][j]=temp;
+                    return true;
+                }   
+            }
+        }
+        
+        // for left
+        if(j>0)
+        {
+            if(board[i][j-1]==word[index+1])
+            {
+                if(func(i,j-1,board,index+1,word))
+                {
+                    board[i][j]=temp;
+                    return true;
+                } 
+            }
+        }
+        //for right
+        if(j<col-1)
+        {
+            if(board[i][j+1]==word[index+1])
+            {
+                if(func(i,j+1,board,index+1,word))
+                {
+                    board[i][j]=temp;
+                    return true;
+                } 
+            }
+        }
+                    board[i][j]=temp;
+        return false;
+    }
+    
+    bool exist(vector<vector<char>>& board,string word) 
+    {
+        
+        for(int i=0;i<board.size();i++)
+        {
+            for(int j=0;j<board[0].size();j++)
+            {
+                if(board[i][j]==word[0])
+                {
+                    if(func(i,j,board,0,word)) return true;
+ 
+                }
+            }   
+        }
+        return false;
+    }
+};
