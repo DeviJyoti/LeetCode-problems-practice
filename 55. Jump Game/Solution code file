@@ -1,0 +1,24 @@
+class Solution { 
+//USING DYNAMIC PROGRAMMING
+public:
+    bool func(vector<int>& arr,vector<int>& nums,int i)
+    {
+        if(i+nums[i]>=nums.size()-1) return true;//base condition
+        if(arr[i]!=-1) return false;
+        //choices:-
+        int choices=nums[i];
+        while(choices)
+        {
+            if(func(arr,nums,i+choices)) return true;
+            --choices;
+        }
+         arr[i]=0;
+        return false;
+    }
+    
+    bool canJump(vector<int>& nums) 
+    {
+       vector<int>arr(nums.size(),-1);   
+       return func(arr,nums,0);
+    }
+};
