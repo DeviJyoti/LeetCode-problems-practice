@@ -1,0 +1,45 @@
+class Solution {
+public:
+    bool validPalindrome(string s)
+    {
+        
+       int i=0,j=s.length()-1;
+        string revers=s;
+        reverse(revers.begin(),revers.end());
+        if(revers==s) return true;
+        string x;
+        
+        //two pointer approach
+        while(i<j)
+        {
+            if(s[i]==s[j])
+            {
+                i++;
+                j--;
+            }
+            if(s[i]!=s[j])
+            {
+                //let's check which element we should remove or not
+                revers.clear();
+                x.clear();
+                x=s;//copying original string
+                x.erase(i,1); //removing ith index
+                revers=x; //string after deletion
+                reverse(x.begin(),x.end());
+                if(x==revers) return true; 
+                
+                revers.clear();
+                x.clear();
+                x=s; // copying original string
+                x.erase(j,1);
+                revers=x; //string after deletion
+                reverse(x.begin(),x.end());
+                if(x==revers) return true; 
+                
+                return false;
+            
+            }
+        }
+        return false;
+    }
+};
