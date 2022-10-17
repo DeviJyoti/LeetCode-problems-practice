@@ -3,7 +3,7 @@ class Solution {
 public:
     int bitwiseComplement(int n) {
         
-           //FIRST METHOD:-
+           //*****************FIRST METHOD*******************//
         
 //         int m=n;
 //         int mask=0;
@@ -19,7 +19,7 @@ public:
 //         return ans;
         
         
-           //SECOND METHOD:-
+               //*****************SECOND METHOD*****************//
         
 //          int m=n;
 //         string bin;
@@ -73,7 +73,7 @@ public:
 //         return ans;
         
         
-           //THIRD METHOD:-
+              //**********************THIRD METHOD*********************//
         
         if(n==0) return 1;
         long long int length=((long int)log2(n)+1); //finding the length of binary number 
