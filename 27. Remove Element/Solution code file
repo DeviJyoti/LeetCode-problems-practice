@@ -1,0 +1,39 @@
+LINK:-https://leetcode.com/problems/remove-element/
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        
+          //FIRST METHOD:-
+        
+//         int count=0;
+//         for(int i=0;i<nums.size();i++)
+//         {
+//             if(nums[i]==val)
+//             {
+//                 nums.erase(nums.begin()+i);
+//                 count++;
+//                 i--;
+//             }
+//         }
+        
+//         for(int i=0;i<count;i++)
+//         {
+//             nums.push_back(val);
+//         }
+//         return nums.size()-count;
+        
+        //SECOND METHOD(TWO POINTER):-
+        
+        int j=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]!=val)
+            {
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+};
