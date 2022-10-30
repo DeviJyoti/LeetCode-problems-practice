@@ -1,0 +1,53 @@
+//LINK:-https://leetcode.com/problems/plus-one/
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int carry=0;
+        int i=digits.size()-1;
+        vector<int> result;
+        if(digits[i]==9)
+        {
+            result.push_back(0);
+            carry=1;
+        }
+        else
+        {
+            result.push_back(digits[i]+1);
+        }
+        
+        i--;
+        
+        while(i>=0)
+        {
+            if(carry==1)
+            {
+                if(digits[i]>8 )
+                {
+                    result.push_back(0);
+                }
+                else
+                {
+                    result.push_back(digits[i]+1);
+                    carry=0;
+                } 
+            }
+            else
+            {
+                result.push_back(digits[i]);
+            }
+            
+            i--;
+        }
+        if(carry==1)
+        {
+            result.push_back(1);
+        }
+        reverse(result.begin(),result.end());
+        return result;
+        
+        
+        
+        return digits;
+    }
+};
