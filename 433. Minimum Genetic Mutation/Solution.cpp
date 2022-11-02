@@ -26,7 +26,7 @@ public:
                     {
                         string adjnode=node;
                         adjnode[j]=ch;
-                        if(!st.count(adjnode) &&                                      find(bank.begin(),bank.end(),adjnode)!=bank.end())
+                        if(!st.count(adjnode) &&find(bank.begin(),bank.end(),adjnode)!=bank.end())
                         {
                             q.push(adjnode);
                             st.insert(adjnode);
