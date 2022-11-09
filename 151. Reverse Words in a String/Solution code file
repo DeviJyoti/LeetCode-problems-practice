@@ -1,5 +1,6 @@
 //LINK:-https://leetcode.com/problems/reverse-words-in-a-string/
 
+//SOLUTION:-
 class Solution {
 public:
 string reverseWords(string s) {
@@ -14,7 +15,8 @@ string reverseWords(string s) {
             
             int j = i;
             
-			//to detect characters and break when we detect any space
+	 //to detect characters and break when we detect any space
+			
             while(j < n && s[j] != ' ') j++;
             
 			//to take out the first word
