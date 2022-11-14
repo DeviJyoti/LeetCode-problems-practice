@@ -15,7 +15,6 @@ public:
             st2.insert(t[i]);
         }
         if(st1==st2) return true;
-        else
-            return false;
+        else return false;
     }
 };
