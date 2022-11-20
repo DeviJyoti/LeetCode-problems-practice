@@ -2,7 +2,6 @@
 //solution:-
 class Solution {
 public:
-    
     vector<int> twoSum(vector<int> nums, int target) {
         vector<int>result;
         map<int,int>mymap;
@@ -13,6 +12,8 @@ public:
             {
                 mymap[nums[i]]=i;
             }
+            
+            
             if(mymap.find(target-nums[i])!=mymap.end() && i!=mymap[target-nums[i]])
             {
                 result.push_back(i);
