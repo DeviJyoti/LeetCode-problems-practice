@@ -1,7 +1,8 @@
 #Link for problem :- https://leetcode.com/problems/two-sum/
 //solution:-
-class Solution {
-public:
+class Solution 
+{
+    public:
     vector<int> twoSum(vector<int> nums, int target) {
         vector<int>result;
         map<int,int>mymap;
