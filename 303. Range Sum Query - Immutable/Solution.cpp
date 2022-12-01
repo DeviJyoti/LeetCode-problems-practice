@@ -25,7 +25,7 @@ public:
         
         if(left==0) return vec[right];
         return vec[right]-vec[left-1];
-        //return accumulate(nums.begin()+left,nums.begin()+right+1,0);    broute force approch 
+        //return accumulate(nums.begin()+left,nums.begin()+right+1,0);    broute force approch (second method)
     }
     
     
