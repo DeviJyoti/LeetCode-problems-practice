@@ -3,7 +3,7 @@
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        unordered_map<string,vector<string>>mymap;
+        unordered_map<string,vector<string>>mymap; //storing original string in value part
         int n=strs.size();
         string temp;
         for(int i=0;i<n;i++)
