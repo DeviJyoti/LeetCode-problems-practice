@@ -1,8 +1,6 @@
 //LINK:-https://leetcode.com/problems/valid-palindrome/
 
 //solution:-
-
-
 class Solution {
 public:
     bool isPalindrome(string s) {
@@ -15,7 +13,8 @@ public:
         // converting whole string into uppercase
         transform(str.begin(), str.end(), str.begin(), ::toupper);
         
-        int i=0,j=size(str)-1;
+        int i=0;
+        int j=size(str)-1;
         
         while(i<j) {
             if(str[i] != str[j]) return false; 
