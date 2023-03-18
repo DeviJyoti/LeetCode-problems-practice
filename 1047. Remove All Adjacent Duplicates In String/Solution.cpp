@@ -1,5 +1,4 @@
 //LINK:-https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
-
 //SOLUTION:-
 class Solution {
 public:
