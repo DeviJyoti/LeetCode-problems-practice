@@ -1,9 +1,7 @@
 //LINK:-https://leetcode.com/problems/implement-stack-using-queues/
-
 //SOLUTION
 class MyStack {
-public:
-      
+public: 
     queue<int>q1;
     queue<int>q2;
     
@@ -20,7 +18,6 @@ public:
             q2.pop();
         }
     }
-    
     int pop() {
         int ans=q1.front();
         q1.pop();
