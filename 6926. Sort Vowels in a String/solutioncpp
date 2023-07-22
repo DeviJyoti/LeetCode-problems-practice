@@ -1,0 +1,34 @@
+class Solution {
+public:
+    string sortVowels(string S) {
+          int n = S.size();
+    vector<char>vow ;
+    for (int i = 0; i < n; i++) {
+ 
+        if (S[i] == 'a' || S[i] == 'e'
+            || S[i] == 'i' || S[i] == 'o'
+            || S[i] == 'u'|| S[i] == 'A' || S[i] == 'E'
+            || S[i] == 'I' || S[i] == 'O'
+            || S[i] == 'U') {
+            vow.push_back(S[i]);
+        }
+    }
+    if (vow.size() == 0) {
+        return S;
+    }
+  sort(vow.begin(),vow.end());
+
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+ 
+        if (S[i] == 'a' || S[i] == 'e' || S[i] == 'i' || S[i] == 'o'
+            || S[i] == 'u'|| S[i] == 'A' || S[i] == 'E'
+            || S[i] == 'I' || S[i] == 'O'
+            || S[i] == 'U') {
+            S[i] = vow[j];
+            j++;
+        }
+    }
+    return S;
+    }
+};
