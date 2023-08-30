@@ -10,54 +10,31 @@
  */
 class Solution {
 public:
-
-    ListNode * rotate(ListNode * head){
-
-        ListNode * prev = NULL;
-        ListNode * curr = head;
-
-        while(curr->next!=NULL){
-            prev = curr;
-            curr = curr->next;
-        }
-
-        curr->next = head;
-        prev->next = NULL;
-        return curr;
-
-    }
-
-    int getlength(ListNode * head){
-        ListNode * p = head;
-        int count =0;
-        while(p!=NULL){
-            p=p->next;
-            count++;
-        }
-        return count;
-
-    }
-
-
-
     ListNode* rotateRight(ListNode* head, int k) {
-
-        ListNode * curr = head;
-
-        if(head == NULL || head->next == NULL || k == 0){
-            return head;
-        }
-
-        int count = 0;
-        int length = getlength(head);
-        k=k%length;
-
-        while(count < k){
-            curr = rotate(curr);
-            count++;
-        }
-
-        return curr;
+        //reach th elast element 
+        if(head==NULL || k==0) return head;
+        ListNode* curr=head;
+        int n=0;
+        int len=1;
         
+        while(curr->next){
+            curr=curr->next;
+            n++;
+            len++;
+        }
+        //make circular list
+        curr->next=head;
+        k=k%len;
+
+        int jump=n-k;
+        
+        curr=head;
+        while(jump){
+            curr=curr->next;
+            jump--;
+        }
+        ListNode* newhead = curr->next;
+        curr->next=NULL;
+        return newhead;
     }
 };
